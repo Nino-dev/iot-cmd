@@ -13,7 +13,15 @@ This will be done within Adafruit IO through a colorpicker.
   - 1x RGB Ledstrip 
   
 ## Step 1: Connect LED strip to the Arduino Board
-The first thing we want to do is connect our DHT11 Sensor to the Arduino Board, using Jumber Wires. The image below shows which wires need to be connected to which pins on the board. Note that we also have to attach the resistor between the wires that are connected to `3v3` and `D2`.
+The first thing we want to do is connect our LED strip to the Arduino Board. Follow the next steps:
+
+1. Wire 5V to 3V3
+2. Middle wire (Din) to D5
+3. GND wire to GND
+
+If you followed these instructions properly your LED strip should be all connected to the Board.
+
+## Step 2: Install Adafruit Neopixel Library
 
 Leftmost pin to `3v3` (red wire)<br>
 Second pin to `D2` (green wire)<br>
