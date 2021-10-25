@@ -15,29 +15,24 @@ This will be done within Adafruit IO through a colorpicker.
 ## Step 1: Connect LED strip to the Arduino Board
 The first thing we want to do is connect our LED strip to the Arduino Board. Follow the next steps:
 
-1. Wire 5V to 3V3
-2. Middle wire (Din) to D5
-3. GND wire to GND
+1. Wire 5V (LED) to 3V3 (Board)
+2. Wire Din (LED) to D5 (Board)
+3. Wire GND (LED) to GND (Board)
 
 If you followed these instructions properly your LED strip should be all connected to the Board.
 
 ## Step 2: Install Adafruit Neopixel Library
 
-Leftmost pin to `3v3` (red wire)<br>
-Second pin to `D2` (green wire)<br>
-Third pin empty<br>
-Fourth pin to `GND` (black wire)<br>
-Resistor between red and green wire<br>
-![Image of schematic](https://github.com/Ralphvandodewaard/manualiot/blob/master/schematic1.png)
+Now that the LED strip is connected we need to install the Adafruit Neopixel Library to make sure everything works.
 
-## Step 2: Installing the required libraries in Arduino IDE
-For the DHT11 Sensor to properly function, we will first need to install the required libraries in the [Arduino IDE](https://www.arduino.cc/en/main/software). We can do this by going to the 'Sketch' dropdown menu, selecting 'Include Library' and then clicking on 'Manage Libraries'.<br>
+1. Go to Sketch > Include library > Manage Libraries…
+2. Search for "adafruit neopixel"
+3. Click on install
 
-In the Library Manager, we first want to search for 'Adafruit Unified Sensor'. Scroll down to the correct library, made by Adafruit, and press 'Install'. If done correctly, the library will now say 'Installed'.<br>
-![Image of library manager2](https://github.com/Ralphvandodewaard/manualiot/blob/master/library2.png)
 
-We now want to install one more library, called the 'DHT sensor library' by Adafruit. Search for the correct library in the Library Manager and again press 'Install'. If done correctly, the library will now say 'Installed'.<br>
-![Image of library manager3](https://github.com/Ralphvandodewaard/manualiot/blob/master/library3.png)
+
+## Step 3: Run an example code
+
 
 ## Step 3: Uploading the required code for the DHT11 Sensor to the Arduino Board
 We can now start uploading code to our Arduino Board to get the DHT11 Sensor to work. Plug your Arduino Board into your computer using a USB to Micro USB cable and copy and paste the code shown below to the Arduino IDE. If the required libraries for the sensor have been properly installed, as done in step 2, you can now press 'Upload' in the top left of your screen. The code will start compiling and uploading to your Arduino Board.
