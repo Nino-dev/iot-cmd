@@ -1,18 +1,26 @@
-# Adafruit IO: Change LED-color through colorpicker 
+# Warm Welcome: Turn lights on based off outside temperature 
 
 By Nino van der Vinden<br>
-Last updated 25 October 2021
+Last updated 25 October 2022
 
 ## Introduction
-Within this manual you'll find the instructions to install and setup Adafruit IO to create something similar to a Philips (Signify) HUE.
-This will be done within Adafruit IO through a colorpicker. 
+Within this manual you'll find the instructions to setup a program that turns on a LED-strip based on the outside temperature. This is realised with the Open Weather Map API. 
 
 ## Required hardware components
   - 1x NodeMCU (We'll be using the [ESP8266 Development Board](https://www.amazon.com/HiLetgo-Internet-Development-Wireless-Micropython/dp/B010O1G1ES))
   - 1x USB cable (Micro USB to USB-A)
   - 1x RGB Ledstrip 
+
+## Other required stuff 
+- 2.4GHZ wifi connection
+- Open Weather Map API
   
-## Step 1: Connect LED strip to the Arduino Board
+## Step 1: Install the Arduino IDE
+Installing the Arduino IDE software is pretty straight forward. Follow the instructions at the link below for your specific OS.
+
+[Arduino IDE installation guide.](https://www.arduino.cc/en/Guide)
+
+## Step 2: Connecting the hardware
 The first thing we want to do is connect our LED strip to the Arduino Board. Follow the next steps:
 
 1. Wire 5V (LED) to 3V3 (Board)
@@ -21,9 +29,9 @@ The first thing we want to do is connect our LED strip to the Arduino Board. Fol
 
 If you followed these instructions properly your LED strip should be all connected to the Board.
 
-## Step 2: Install Adafruit Neopixel Library
+## Step 3: Setting up a wifi connection
 
-Now that the LED strip is connected we need to install the Adafruit Neopixel Library to make sure everything works.
+Now that the LED strip is connected we need to make sure we connect the Arduino to a wifi connection to be able to access the API. 
 
 1. Go to Sketch > Include library > Manage Libraries…
 2. Search for "adafruit neopixel"
