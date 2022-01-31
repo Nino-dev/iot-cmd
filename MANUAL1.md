@@ -1,7 +1,7 @@
 # Warm Welcome: Turn lights on based off outside temperature 
 
 By Nino van der Vinden<br>
-Last updated 25 October 2022
+Last updated 31 January 2022
 
 ## Introduction
 Within this manual you'll find the instructions to setup a program that turns on a LED-strip based on the outside temperature. This is realised with the Open Weather Map API. 
@@ -33,9 +33,37 @@ If you followed these instructions properly your LED strip should be all connect
 
 Now that the LED strip is connected we need to make sure we connect the Arduino to a wifi connection to be able to access the API. 
 
-1. Go to Sketch > Include library > Manage Libraries…
-2. Search for "adafruit neopixel"
-3. Click on install
+1. Make a new file: File > New
+2. Paste the next code inside the file (**note:** we're using a ESP8266 board so make sure to include the right wifi module).
+```
+#include <ESP8266WiFi.h>
+
+const char* ssid = "your-wifi";
+const char* password = "your-password";
+
+void setup()
+{
+  Serial.begin(9600);
+  Serial.println();
+
+  WiFi.begin(ssid, password);
+
+  Serial.print("Connecting");
+  while (WiFi.status() != WL_CONNECTED)
+  {
+    delay(500);
+    Serial.print(".");
+  }
+  Serial.println();
+
+  Serial.print("Connected, IP address: ");
+  Serial.println(WiFi.localIP());
+}
+
+void loop() {}
+```
+
+3. Open your Serial Monitor: 
 
 
 
