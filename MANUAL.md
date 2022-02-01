@@ -90,8 +90,8 @@ String openWeatherMapApiKey = "your-key";
 //String openWeatherMapApiKey = "bd939aa3d23ff33d3c8f5dd1dd4";
 
 // Replace with your country code and city
-String city = "Porto";
-String countryCode = "PT";
+String city = "Amsterdam";
+String countryCode = "NL";
 
 String jsonBuffer;
 
@@ -204,8 +204,8 @@ String openWeatherMapApiKey = "your-key";
 //String openWeatherMapApiKey = "bd939aa3d23ff33d3c8f5dd1dd4";
 
 // Replace with your country code and city
-String city = "Porto";
-String countryCode = "PT";
+String city = "Amsterdam";
+String countryCode = "NL";
 
 String jsonBuffer;
 
@@ -298,3 +298,10 @@ String httpGETRequest(const char* serverName) {
   return object;
 }
 ```
+
+This is the output your Serial Monitor should give:
+<img width="841" alt="Schermafbeelding 2022-02-01 om 02 38 15" src="https://user-images.githubusercontent.com/33895563/151900667-347b5266-a7e3-4125-9056-104a474cac38.png">
+
+If this isn't the case please check the **error handling** section right below here.
+
+## Error handling
