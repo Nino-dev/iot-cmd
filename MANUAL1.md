@@ -9,12 +9,10 @@ Within this manual you'll find the instructions to setup a program that turns on
 ## Required hardware components
   - 1x NodeMCU (We'll be using the [ESP8266 Development Board](https://www.amazon.com/HiLetgo-Internet-Development-Wireless-Micropython/dp/B010O1G1ES))
   - 1x USB cable (Micro USB to USB-A)
-  - 1x RGB Ledstrip 
 
 ## Other required stuff 
 - 2.4GHZ wifi connection
-- 
-- Open Weather Map API
+- Open Weather Map API key
   
 ## Step 1: Install the Arduino IDE
 Installing the Arduino IDE software is pretty straight forward. Follow the instructions at the link below for your specific OS.
@@ -22,13 +20,8 @@ Installing the Arduino IDE software is pretty straight forward. Follow the instr
 [Arduino IDE installation guide.](https://www.arduino.cc/en/Guide)
 
 ## Step 2: Connecting the hardware
-The first thing we want to do is connect our LED strip to the Arduino Board. Follow the next steps:
-
-1. Wire 5V (LED) to 3V3 (Board)
-2. Wire Din (LED) to D5 (Board)
-3. Wire GND (LED) to GND (Board)
-
-If you followed these instructions properly your LED strip should be all connected to the Board.
+The first thing we want to do is connect the board to our desktop/laptop.
+This is easily done with the USB cable (Micro USB to USB-A).
 
 ## Step 3: Setting up a wifi connection
 
@@ -78,7 +71,101 @@ Go to Sketch > Include Library > Manage Libraries and search for the library nam
 2. After that go to: https://home.openweathermap.org/api_keys to activate and copy your API key.
 
 
-## Step 3: Run an example code
+## Step 6: HTTP GET request to API
+Now we wanna retrieve weather data from the Open Weather API. Include the **ESP8266HTTPClient** and the **Arduino_JSON** modules at the top of the code.
+The code down below tries to access the API with a GET request after the wifi connection is succesfully made. 
+```
+
+#include <ESP8266WiFi.h>
+#include <ESP8266HTTPClient.h>
+#include <Arduino_JSON.h>
+
+const char* ssid = "your-wifi";
+const char* password = "your-password";
+
+// Your Domain name with URL path or IP address with path
+String openWeatherMapApiKey = "your-key";
+// Example:
+//String openWeatherMapApiKey = "bd939aa3d23ff33d3c8f5dd1dd4";
+
+// Replace with your country code and city
+String city = "Porto";
+String countryCode = "PT";
+
+String jsonBuffer;
+
+void setup() {
+  // Make sure the baudrate is the same in your Serial Monitor
+  Serial.begin(9600);
+
+  WiFi.begin(ssid, password);
+  Serial.println("Connecting");
+  while(WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+  Serial.println("");
+  Serial.print("Connected to WiFi network with IP Address: ");
+  Serial.println(WiFi.localIP());
+ 
+  Serial.println("Data refreshes every 10 seconds.");
+}
+
+void loop() {
+  // Send an HTTP GET request
+    // Check WiFi connection status
+    if(WiFi.status()== WL_CONNECTED){
+      String serverPath = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "," + countryCode + "&APPID=" + openWeatherMapApiKey;
+      
+      jsonBuffer = httpGETRequest(serverPath.c_str());
+      Serial.println(jsonBuffer);
+      
+      // Decoding JSON object
+      JSONVar myObject = JSON.parse(jsonBuffer);
+  
+      if (JSON.typeof(myObject) == "undefined") {
+        Serial.println("Parsing input failed!");
+        return;
+      }
+
+      // Open Weather Map shows temperature in Kelvin
+      float kelvin = int(myObject["main"]["temp"]);
+    }
+    else {
+      Serial.println("WiFi Disconnected");
+    }
+    delay(10000);
+}
+
+String httpGETRequest(const char* serverName) {
+  WiFiClient client;
+  HTTPClient http;
+    
+  // Your IP address with path or Domain name with URL path 
+  http.begin(client, serverName);
+  
+  // Send HTTP POST request
+  int httpResponseCode = http.GET();
+  
+  // This is where the output from the GET request is stored
+  String object = "{}"; 
+  
+  // Error handling
+  if (httpResponseCode>0) {
+    Serial.print("HTTP Response code: ");
+    Serial.println(httpResponseCode);
+    object = http.getString();
+  }
+  else {
+    Serial.print("Error code: ");
+    Serial.println(httpResponseCode);
+  }
+  
+  http.end();
+
+  return object;
+}
+```
 
 
 ## Step 3: Uploading the required code for the DHT11 Sensor to the Arduino Board
