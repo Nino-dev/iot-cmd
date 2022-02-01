@@ -6,6 +6,8 @@ Last updated 31 January 2022
 ## Introduction
 Within this manual you'll find the instructions to setup a program that turns the built-in LED based on the outside temperature (has to represent a heater in the form of a prototype). This is realised with the Open Weather Map API. 
 
+<img width="25%" alt="" src="https://user-images.githubusercontent.com/33895563/151901018-197c9936-4171-4ef1-89e0-256b252dc605.png">
+
 ## Required hardware components
   - 1x NodeMCU (We'll be using the [ESP8266 Development Board](https://www.amazon.com/HiLetgo-Internet-Development-Wireless-Micropython/dp/B010O1G1ES))
   - 1x USB cable (Micro USB to USB-A)
@@ -308,6 +310,14 @@ If this isn't the case please check the **error handling** section right below h
 
 ### Wifi Issues
 
+1. Make sure that your desktop/laptop is connected to wifi, otherwise the program can't retrieve certain packages.
+<img width="641" alt="Schermafbeelding 2022-02-01 om 01 09 53" src="https://user-images.githubusercontent.com/33895563/151901214-667f12af-ed81-4105-9712-3fcd03e000a4.png">
+
+2. Make sure you're using a 2.4GHZ internet connection to connect the Arduino. I recommend a mobile hotspot from an Android device. The Arduino won't find any hotspots from an Apple device. Also my home router couldn't connect with the Arduino because it isn't 2.4GHZ.
+
 ### Serial Monitor Issues
+1. If you come across weird characters in you're Serial Monitor, please make sure you're baudrate of the monitor is the exact same as your Serial.begin() (also explained in the code).
+2. If this doesn't help try to hit the small reset button on the Arduino. This was the only solution for me to get rid of the weird characters and let the program run properly.
 
 ### General Errors
+When you come across any syntax error, make sure you end every line of code properly and open and close every code block properly.
