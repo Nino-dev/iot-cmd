@@ -320,4 +320,12 @@ If this isn't the case please check the **error handling** section right below h
 2. If this doesn't help try to hit the small reset button on the Arduino. This was the only solution for me to get rid of the weird characters and let the program run properly.
 
 ### General Errors
-When you come across any syntax error, make sure you end every line of code properly and open and close every code block properly.
+1. When you come across any syntax error, make sure you end every line of code properly and open and close every code block properly.
+<img width="659" alt="Schermafbeelding 2022-02-01 om 01 01 08" src="https://user-images.githubusercontent.com/33895563/151901935-dd47c8e8-1f9b-46ce-b087-ed5cc2473635.png">
+
+2. I guess my Arduino was a bit broken, because after uploading and running the code it'll throw a diversity of errors at me that also we're solved by hitting the reset button on the Arduino itself. Look below to see the errors.
+
+<img width="484" alt="Schermafbeelding 2022-02-01 om 00 55 09" src="https://user-images.githubusercontent.com/33895563/151901888-1f2ce516-f137-41e2-a67d-e7ce8042ff8e.png">
+<img width="496" alt="Schermafbeelding 2022-02-01 om 00 56 02" src="https://user-images.githubusercontent.com/33895563/151901916-0932507d-c470-4383-8531-57d0dc4907bc.png">
+
+
