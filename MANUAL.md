@@ -186,8 +186,8 @@ As you can see shows Open Weather Map the temperature in Kelvin. With an easy fo
       float celsius = kelvin - 273.15;
 ```
 
-## Step 9: Turn heater on at specific condition
-If we wanna say the built-in LED only turns on below a specific temperature we have to write an if statement. Down below you'll find the final code with the condition that the LED (heater) only blinks when the outside temperature is below 10 degrees.
+## Step 9: Turn heater on at specific temperature
+If we wanna say the built-in LED (heater) only turns on below a specific temperature we have to write an if statement. Down below you'll find the final code with the condition that the LED only blinks when the outside temperature is below 10 degrees.
 
 ```
 
@@ -305,3 +305,9 @@ This is the output your Serial Monitor should give:
 If this isn't the case please check the **error handling** section right below here.
 
 ## Error handling
+
+### Wifi Issues
+
+### Serial Monitor Issues
+
+### General Errors
