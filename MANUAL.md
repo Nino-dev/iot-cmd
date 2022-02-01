@@ -317,15 +317,27 @@ If this isn't the case please check the **error handling** section right below h
 
 ### Serial Monitor Issues
 1. If you come across weird characters in you're Serial Monitor, please make sure you're baudrate of the monitor is the exact same as your Serial.begin() (also explained in the code).
+<img width="659" alt="Schermafbeelding 2022-02-01 om 01 01 08" src="https://user-images.githubusercontent.com/33895563/151901935-dd47c8e8-1f9b-46ce-b087-ed5cc2473635.png">
+
 2. If this doesn't help try to hit the small reset button on the Arduino. This was the only solution for me to get rid of the weird characters and let the program run properly.
+<img width="659" alt="" src="https://user-images.githubusercontent.com/33895563/151902582-590f29dd-ea00-4a9f-b10a-fd29e1c4ac73.png">
 
 ### General Errors
 1. When you come across any syntax error, make sure you end every line of code properly and open and close every code block properly.
-<img width="659" alt="Schermafbeelding 2022-02-01 om 01 01 08" src="https://user-images.githubusercontent.com/33895563/151901935-dd47c8e8-1f9b-46ce-b087-ed5cc2473635.png">
 
-2. I guess my Arduino was a bit broken, because after uploading and running the code it'll throw a diversity of errors at me that also we're solved by hitting the reset button on the Arduino itself. Look below to see the errors.
+2. I guess my Arduino was a bit broken, because after uploading and running the code it'll throw these two errors at me that also we're solved by hitting the reset button on the Arduino itself. Look below to see the errors.
 
 <img width="484" alt="Schermafbeelding 2022-02-01 om 00 55 09" src="https://user-images.githubusercontent.com/33895563/151901888-1f2ce516-f137-41e2-a67d-e7ce8042ff8e.png">
 <img width="496" alt="Schermafbeelding 2022-02-01 om 00 56 02" src="https://user-images.githubusercontent.com/33895563/151901916-0932507d-c470-4383-8531-57d0dc4907bc.png">
+
+## Sources
+
+https://randomnerdtutorials.com/esp8266-nodemcu-http-get-open-weather-map-thingspeak-arduino/
+<br>
+https://home.openweathermap.org/
+<br>
+https://stackoverflow.com/questions/19477324/how-do-i-calculate-the-temperature-in-celsius-returned-in-openweathermap-org-jso
+<br>
+https://www.arduino.cc/reference/en/language/variables/data-types/float/
 
 
