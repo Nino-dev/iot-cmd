@@ -13,6 +13,7 @@ Within this manual you'll find the instructions to setup a program that turns on
 
 ## Other required stuff 
 - 2.4GHZ wifi connection
+- 
 - Open Weather Map API
   
 ## Step 1: Install the Arduino IDE
@@ -63,8 +64,18 @@ void setup()
 void loop() {}
 ```
 
-3. Open your Serial Monitor: 
+## Step 4: Run the code to test it out
+1. First upload the code to your Arduino.
+2. Check your Serial Monitor: Tools > Serial Monitor.
+3. If the output is "Connected, IP address: ..." you're good to proceed. If this isn't the case, please check out the error handling section below this document.
 
+## Step 5: Include the Arduino JSON library
+Go to Sketch > Include Library > Manage Libraries and search for the library name as follows:
+![Install-Arduino-JSON-library-Arduino-IDE](https://user-images.githubusercontent.com/33895563/151871404-81a8046f-e161-4e22-ac42-2ad5d6d06bb0.png)
+
+## Step 6: Setting up Open Weather Map API
+1. Open a tab in your browser and go to: https://home.openweathermap.org/users/sign_up to sign up for a new account.
+2. After that go to: https://home.openweathermap.org/api_keys to activate and copy your API key.
 
 
 ## Step 3: Run an example code
