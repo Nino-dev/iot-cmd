@@ -316,7 +316,7 @@ If this isn't the case please check the **error handling** section right below h
 2. Make sure you're using a 2.4GHZ internet connection to connect the Arduino. I recommend a mobile hotspot from an Android device. The Arduino won't find any hotspots from an Apple device. Also my home router couldn't connect with the Arduino because it isn't 2.4GHZ.
 
 ### Serial Monitor Issues
-1. If you come across weird characters in you're Serial Monitor, please make sure you're baudrate of the monitor is the exact same as your Serial.begin() (also explained in the code).
+1. If you come across weird characters in your Serial Monitor, please make sure you're baudrate of the monitor is the exact same as your Serial.begin() (also explained in the code).
 <img width="659" alt="Schermafbeelding 2022-02-01 om 01 01 08" src="https://user-images.githubusercontent.com/33895563/151901935-dd47c8e8-1f9b-46ce-b087-ed5cc2473635.png">
 
 2. If this doesn't help try to hit the small reset button on the Arduino. This was the only solution for me to get rid of the weird characters and let the program run properly.
