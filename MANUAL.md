@@ -172,7 +172,7 @@ String httpGETRequest(const char* serverName) {
 }
 ```
 
-If you're code runs without any errors you should see the output below in your Serial Monitor:
+If your code runs without any errors you should see the output below in your Serial Monitor:
 
 <img width="833" alt="Schermafbeelding 2022-02-01 om 02 24 10" src="https://user-images.githubusercontent.com/33895563/151899585-d169afb1-36f7-441c-9b50-1b4e9f7e9b59.png">
 
@@ -198,7 +198,7 @@ If we wanna say the built-in LED (heater) only turns on below a specific tempera
 #include <Arduino_JSON.h>
 
 const char* ssid = "your-wifi";
-const char* password = "your-wifi";
+const char* password = "your-password";
 
 // Your Domain name with URL path or IP address with path
 String openWeatherMapApiKey = "your-key";
